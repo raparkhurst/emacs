@@ -21,6 +21,7 @@
 
 (add-to-list 'load-path "~/.emacs.d/")
 (add-to-list 'load-path "~/.emacs.d/emacs-nav-49")
+(add-to-list 'load-path "~/.emacs.d/emacs-color-theme-solarized")
 
 
 ;; load ruby when .rb file is loaded
