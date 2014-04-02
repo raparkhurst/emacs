@@ -7,6 +7,7 @@
 (require 'color-theme)
 (color-theme-initialize)
 (color-theme-classic)
+;; (color-theme-matrix)
 
 ;; Disable Startup message
 (setq inhibit-startup-message t)
@@ -15,14 +16,14 @@
 ;; set tab widths
 (setq c-basic-offset 2)
 (setq tab-width 2)
-(setq indent-tabs-mode nil)
+;; (setq indent-tabs-mode nil)
 
 (turn-on-font-lock)
 
 (add-to-list 'load-path "~/.emacs.d/")
 (add-to-list 'load-path "~/.emacs.d/emacs-nav-49")
 (add-to-list 'load-path "~/.emacs.d/emacs-color-theme-solarized")
-
+(require 'color-theme-solarized)
 
 ;; load ruby when .rb file is loaded
 (autoload 'ruby-mode "ruby-mode" "Major mode for editing ruby scripts." t)
