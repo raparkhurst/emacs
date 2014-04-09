@@ -61,6 +61,18 @@
 ;;(define-key global-map "\C-cs"
 ;;  (lambda () (interactive) (org-capture nil "s")
 
+
+;; setup a tasks template (from example)
+ (setq org-capture-templates
+      '(("s" "Status" entry (file+headline "~/Documents/notes.org" "Status")
+             "* Status"
+	     " - Tickets Worked On"
+	     " - Tickets Closed")
+        ("j" "Journal" entry (file+datetree "~/org/journal.org")
+             "* %?\nEntered on %U\n  %i\n  %a")))
+(define-key global-map "\C-ccs"
+	(lambda () (interactive) (org-capture nil "s")))
+
 ;; load ruby when .rb file is loaded
 (autoload 'ruby-mode "ruby-mode" "Major mode for editing ruby scripts." t)
 (setq auto-mode-alist  (cons '(".rb$" . ruby-mode) auto-mode-alist))
@@ -98,14 +110,15 @@
  '(save-place t nil (saveplace))
  '(tab-stop-list (quote (2 4 6 8 10 12 14 16 18 20 22 24 26 28 30)))
  '(text-mode-hook (quote (turn-on-auto-fill text-mode-hook-identify))))
-(custom-set-faces
+;;(custom-set-faces
   ;; custom-set-faces was added by Custom.
   ;; If you edit it by hand, you could mess it up, so be careful.
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "darkslategrey" :foreground "AntiqueWhite" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 83 :width normal :foundry "unknown" :family "DejaVu Sans Mono")))))
+;; '(default ((t (:inherit nil :stipple nil :background "darkslategrey" :foreground "AntiqueWhite" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 83 :width normal :foundry "unknown" :family "DejaVu Sans Mono")))))
 
 (scroll-bar-mode 1)
 (menu-bar-mode 1)
 
-(set-default-font "Monospace 9")
+;;(set-default-font "Monospace 8")
+(set-default-font "Ubuntu Mono 8")
